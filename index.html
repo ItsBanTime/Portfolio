@@ -248,7 +248,15 @@
         function showPopup(buttonLabel) {
             const popup = document.getElementById('popup');
             const popupText = document.getElementById('popup-text');
-            popupText.innerHTML = `<h2>${buttonLabel}</h2><p>Placeholder text for ${buttonLabel}. More content will be added here.</p>`;
+            if (buttonLabel === 'Cubit 33') {
+                popupText.innerHTML = `
+                    <img src='rotation images/Rotation 3.jpg' alt='Cubit 33 Image' style='width: 100%; height: auto;'>
+                    <p>This is a game I created using ChatGPT's coding features. It's a simple point and click game where you can meet some interesting characters and find out what they want. You can also help them out, if you feel like it.</p>
+                `;
+            } else {
+                popupText.innerHTML = `<h2>${buttonLabel}</h2><p>Placeholder text for ${buttonLabel}. More content will be added here.</p>`;
+            }
+            popup.style.display = 'flex';
             popup.style.display = 'flex';
         }
 
