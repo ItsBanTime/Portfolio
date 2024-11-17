@@ -81,6 +81,39 @@
             color: limegreen;
             font-weight: normal;
         }
+
+        .dropdown {
+            width: 50%;
+            margin: 2em auto;
+            text-align: left;
+        }
+
+        .dropdown-item {
+            background-color: black;
+            color: white;
+            padding: 1em;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5em;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #f4f4f4;
+            padding: 1em;
+            margin: 0;
+            color: black;
+        }
+
+        .dropdown-item.open .dropdown-content {
+            display: block;
+        }
+
+        .arrow {
+            margin-left: 0.5em;
+        }
     </style>
 </head>
 <body>
@@ -88,9 +121,6 @@
     <div class="navbar">
         <div class="menu">
             <a href="#home">Home</a>
-            <a href="cubit33.html">Cubit33</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
         </div>
     </div>
 
@@ -111,7 +141,27 @@
     <!-- Content Section -->
     <div class="content">
         <div class="bold-header">Hello, this is my cool AI webpage!</div>
-        <div class="sub-text">Here you can find a bunch of cool stuff that I did with Artificial Intelligence. Click on the menu options in the upper right corner to explore some more!</div>
+        <div class="sub-text">Here you can find a bunch of cool stuff that I did with Artificial Intelligence. Check out the dropdown menu below for more!</div>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <div class="dropdown-item" onclick="toggleDropdown(this)">
+                Cubit33 <span class="arrow">&#9662;</span>
+                <div class="dropdown-content">Placeholder text for Cubit33 projects and content.</div>
+            </div>
+            <div class="dropdown-item" onclick="toggleDropdown(this)">
+                Musical Site <span class="arrow">&#9662;</span>
+                <div class="dropdown-content">Placeholder text for Musical Site projects and content.</div>
+            </div>
+            <div class="dropdown-item" onclick="toggleDropdown(this)">
+                Cut-Up Texts <span class="arrow">&#9662;</span>
+                <div class="dropdown-content">Placeholder text for Cut-Up Texts projects and content.</div>
+            </div>
+            <div class="dropdown-item" onclick="toggleDropdown(this)">
+                Zine <span class="arrow">&#9662;</span>
+                <div class="dropdown-content">Placeholder text for Zine projects and content.</div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer Section -->
@@ -153,39 +203,13 @@
         }
 
         changeBackground();
+
+        // JavaScript for Dropdown Menu
+        function toggleDropdown(element) {
+            element.classList.toggle('open');
+            const arrow = element.querySelector('.arrow');
+            arrow.innerHTML = element.classList.contains('open') ? '&#9652;' : '&#9662;';
+        }
     </script>
-</body>
-</html>
-
-<!-- Cubit33 Subpage -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cubit33</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('other backgrounds/cubitcubit.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .content {
-            padding: 2em;
-            text-align: center;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <div class="content">
-        <h1>Welcome to Cubit33</h1>
-        <p>This page is dedicated to the amazing AI projects under the Cubit33 initiative. Stay tuned for more updates!</p>
-    </div>
 </body>
 </html>
