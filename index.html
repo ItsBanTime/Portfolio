@@ -11,7 +11,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
         }
         
         .navbar {
@@ -144,6 +146,24 @@
         }
 
         showSlides();
+
+        // JavaScript for Background Slideshow
+        let bgIndex = 0;
+        const bgImages = [
+            'background images/Bg1.jpg',
+            'background images/Bg2.jpg',
+            'background images/Bg3.jpg',
+            'background images/Bg4.jpg',
+            'background images/Bg5.jpg'
+        ];
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+            bgIndex = (bgIndex + 1) % bgImages.length;
+            setTimeout(changeBackground, 7000); // Change background every 7 seconds
+        }
+
+        changeBackground();
     </script>
 </body>
 </html>
