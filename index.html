@@ -82,39 +82,72 @@
             font-weight: normal;
         }
 
-        .dropdown {
-            width: 50%;
-            margin: 2em auto;
-            text-align: left;
-        }
-
-        .dropdown-item {
-            background-color: black;
-            color: white;
-            padding: 1em;
-            cursor: pointer;
+        
+    .button-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5em;
+            justify-content: center;
+            gap: 1em;
+            margin-top: 2em;
         }
 
-        .dropdown-content {
+        .button {
+            padding: 1em 2em;
+            border: 2px solid white;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button.red {
+            background-color: red;
+        }
+
+        .button.blue {
+            background-color: blue;
+        }
+
+        .button.green {
+            background-color: green;
+        }
+
+        .button.purple {
+            background-color: purple;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
             display: none;
-            background-color: #f4f4f4;
-            padding: 1em;
-            margin: 0;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #333;
+            padding: 2em;
+            color: white;
+            position: relative;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            background-color: white;
             color: black;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
         }
-
-        .dropdown-item.open .dropdown-content {
-            display: block;
-        }
-
-        .arrow {
-            margin-left: 0.5em;
-        }
-    </style>
+</style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -141,20 +174,22 @@
     <!-- Content Section -->
     <div class="content">
         <div class="bold-header">Hello, this is my cool AI webpage!</div>
-        <div class="sub-text">Here you can find a bunch of cool stuff that I did with Artificial Intelligence. Stay tuned for more updates!</div>
+        
+
+        <!-- Buttons Section -->
+        <div class="button-container">
+            <button class="button red" onclick="showPopup('Cubit 33')">Cubit 33</button>
+            <button class="button blue" onclick="showPopup('Musical Site')">Musical Site</button>
+            <button class="button green" onclick="showPopup('Cut-Up Texts')">Cut-Up Texts</button>
+            <button class="button purple" onclick="showPopup('Zine')">Zine</button>
+        </div>
 
         
-            <div class="dropdown-item" onclick="toggleDropdown(this)">
-                Musical Site <span class="arrow">&#9662;</span>
-                <div class="dropdown-content">Placeholder text for Musical Site projects and content.</div>
+            
             </div>
-            <div class="dropdown-item" onclick="toggleDropdown(this)">
-                Cut-Up Texts <span class="arrow">&#9662;</span>
-                <div class="dropdown-content">Placeholder text for Cut-Up Texts projects and content.</div>
+            
             </div>
-            <div class="dropdown-item" onclick="toggleDropdown(this)">
-                Zine <span class="arrow">&#9662;</span>
-                <div class="dropdown-content">Placeholder text for Zine projects and content.</div>
+            
             </div>
         </div>
     </div>
@@ -199,11 +234,27 @@
 
         changeBackground();
 
-        // JavaScript for Dropdown Menu
-        function toggleDropdown(element) {
-            element.classList.toggle('open');
-            const arrow = element.querySelector('.arrow');
-            arrow.innerHTML = element.classList.contains('open') ? '&#9652;' : '&#9662;';
+        
+    </script>
+<div id="popup" class="popup">
+        <div class="popup-content">
+            <button class="back-button" onclick="hidePopup()">Back</button>
+            <div id="popup-text"></div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Popup
+        function showPopup(buttonLabel) {
+            const popup = document.getElementById('popup');
+            const popupText = document.getElementById('popup-text');
+            popupText.innerHTML = `<h2>${buttonLabel}</h2><p>Placeholder text for ${buttonLabel}. More content will be added here.</p>`;
+            popup.style.display = 'flex';
+        }
+
+        function hidePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
         }
     </script>
 </body>
