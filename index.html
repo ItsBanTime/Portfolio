@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic CSS for structure */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .navbar {
+            display: flex;
+            background-color: #333;
+            padding: 1em;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em;
+        }
+        
+        .navbar a:hover {
+            background-color: #555;
+        }
+        
+        .menu {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+        }
+        
+        .content {
+            padding: 2em;
+        }
+
+        .header-title {
+            text-align: center;
+            font-size: 3em;
+            color: red;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .header-subtitle {
+            text-align: center;
+            font-size: 1.5em;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .slideshow-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2em auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        .image-container {
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header-title">Ben's AI Portfolio</div>
+    <div class="header-subtitle">Fall 2024</div>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <img src="rotation images/image1.jpg" alt="Slideshow Image 1" class="slide" style="display: block;">
+        <img src="rotation images/image2.jpg" alt="Slideshow Image 2" class="slide">
+        <img src="rotation images/image3.jpg" alt="Slideshow Image 3" class="slide">
+        <img src="rotation images/image4.jpg" alt="Slideshow Image 4" class="slide">
+        <img src="rotation images/image5.jpg" alt="Slideshow Image 5" class="slide">
+        <img src="rotation images/image6.jpg" alt="Slideshow Image 6" class="slide">
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>Welcome to My Webpage</h1>
+        <p>This is a basic webpage setup that can be built upon. You can add different sections here such as information about yourself, your services, or anything else you'd like to share.</p>
+
+        <!-- Clickable Images Section -->
+        <div class="image-container">
+            <img src="https://via.placeholder.com/200" alt="Placeholder Image 1" onclick="alert('You clicked Image 1!')">
+            <img src="https://via.placeholder.com/200" alt="Placeholder Image 2" onclick="alert('You clicked Image 2!')">
+            <img src="https://via.placeholder.com/200" alt="Placeholder Image 3" onclick="alert('You clicked Image 3!')">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div style="text-align:center; padding:1em; background-color:#333; color:#fff;">
+            &copy; 2024 My Webpage. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Slideshow
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+            slideIndex = (slideIndex + 1) % slides.length;
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        showSlides();
+    </script>
+</body>
+</html>
