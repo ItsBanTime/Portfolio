@@ -40,6 +40,7 @@
         
         .content {
             padding: 2em;
+            text-align: center;
         }
 
         .header-title {
@@ -69,21 +70,16 @@
             display: none;
         }
 
-        .image-container {
-            display: flex;
-            gap: 1em;
-            flex-wrap: wrap;
+        .bold-header {
+            font-size: 2.5em;
+            color: limegreen;
+            font-weight: bold;
         }
 
-        .image-container img {
-            width: 200px;
-            height: auto;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .image-container img:hover {
-            transform: scale(1.1);
+        .sub-text {
+            font-size: 1.5em;
+            color: limegreen;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -114,15 +110,8 @@
 
     <!-- Content Section -->
     <div class="content">
-        <h1>Welcome to My Webpage</h1>
-        <p>This is a basic webpage setup that can be built upon. You can add different sections here such as information about yourself, your services, or anything else you'd like to share.</p>
-
-        <!-- Clickable Images Section -->
-        <div class="image-container">
-            <img src="https://via.placeholder.com/200" alt="Placeholder Image 1" onclick="alert('You clicked Image 1!')">
-            <img src="https://via.placeholder.com/200" alt="Placeholder Image 2" onclick="alert('You clicked Image 2!')">
-            <img src="https://via.placeholder.com/200" alt="Placeholder Image 3" onclick="alert('You clicked Image 3!')">
-        </div>
+        <div class="bold-header">Hello, this is my cool AI webpage!</div>
+        <div class="sub-text">Here you can find a bunch of cool stuff that I did with Artificial Intelligence. Click on the menu options in the upper right corner to explore some more!</div>
     </div>
 
     <!-- Footer Section -->
