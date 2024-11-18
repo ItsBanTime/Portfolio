@@ -180,7 +180,7 @@
         <!-- Buttons Section -->
         <div class="button-container">
             <button class="button red" onclick="showPopup('Cubit 33')">Cubit 33</button>
-            <button class="button blue" onclick="showPopup('Musical Site')">Musical Site</button>
+            <button class="button blue" onclick="showPopup('Hypertext Distant Reading')">Hypertext Distant Reading</button>
             <button class="button green" onclick="showPopup('Cut-Up Texts')">Cut-Up Texts</button>
             <button class="button purple" onclick="showPopup('Zine')">Zine</button>
         
@@ -238,7 +238,7 @@
 
     <script>
         // JavaScript for Popup
-        function showPopup(buttonLabel) {
+        function showPopup(buttonLabel)
             const popup = document.getElementById('popup');
             const popupText = document.getElementById('popup-text');
             if (buttonLabel === 'Cubit 33') {
@@ -247,11 +247,17 @@
                     <p>This is a game I created using ChatGPT's coding features. It's a simple point and click game where you can meet some interesting characters and find out what they want. You can also help them out, if you feel like it.</p>
                     <p><a href='https://itsbantime.github.io/Cubit33/' style='color: cyan; text-decoration: underline;'>Click here to visit Cubit 33</a></p>
                 `;
+            } else if (buttonLabel === 'Hypertext Distant Reading') {
+                popupText.innerHTML = `
+                    <img src='rotation images/Rotation 4.jpg' alt='Hypertext Distant Reading Image' style='width: 300px; height: auto; float: left; margin-right: 1em;'>
+                    <p>For this distant reading, I chose to scan all the books on art Project Gutenberg had, of which there were 74. I ran into some small unexpected issues when grabbing the books from the website, but was easily able to iron them out through ChatGPT troubleshooting. After that, the process to extract and analyze the raw data was pretty painless and gave me very few errors. The only issue that I can see with this distant reading data is that the NLTK stopwords list seemed to be in English, so common words from German and Dutch made it in, but I still find that interesting in its indicating of the different languages in the library.</p>
+                `;
             } else {
                 popupText.innerHTML = `<h2>${buttonLabel}</h2><p>Placeholder text for ${buttonLabel}. More content will be added here.</p>`;
-            }
+            popup.style.display = 'flex';
             popup.style.display = 'flex';
         }
+
         function hidePopup() {
             const popup = document.getElementById('popup');
             popup.style.display = 'none';
