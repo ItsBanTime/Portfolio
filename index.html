@@ -247,18 +247,21 @@
                     <p>This is a game I created using ChatGPT's coding features. It's a simple point and click game where you can meet some interesting characters and find out what they want. You can also help them out, if you feel like it.</p>
                     <p><a href='https://itsbantime.github.io/Cubit33/' style='color: cyan; text-decoration: underline;'>Click here to visit Cubit 33</a></p>
                 `;
+                popup.style.display = 'flex';
             } else if (buttonLabel === 'Hypertext Distant Reading') {
                 popupText.innerHTML = `
                     <img src='rotation images/Rotation 4.jpg' alt='Hypertext Distant Reading Image' style='width: 300px; height: auto; float: left; margin-right: 1em;'>
                     <p>For this distant reading, I chose to scan all the books on art Project Gutenberg had, of which there were 74. I ran into some small unexpected issues when grabbing the books from the website, but was easily able to iron them out through ChatGPT troubleshooting. After that, the process to extract and analyze the raw data was pretty painless and gave me very few errors. The only issue that I can see with this distant reading data is that the NLTK stopwords list seemed to be in English, so common words from German and Dutch made it in, but I still find that interesting in its indicating of the different languages in the library.</p>
                 `;
+                popup.style.display = 'flex';
             } else if (buttonLabel === 'Cut-Up Texts') {
                 popupText.innerHTML = `
                     <img src='rotation images/Rotation 2.jpg' alt='Cut-Up Texts Image' style='width: 300px; height: auto; float: left; margin-right: 1em;'>
                     <p>Using CoPilot's AI text analyzing features I cut up five texts, placing different lines in a random pattern chosen by the AI to create a Cut-Up text, a form of Dadaist poem. The texts I chose were "The Second Coming" by W.B. Yeats, "Dreamers" By Siegfried Sassoon, a description of the Matisse painting "Dance I" cut up into small chunks, the intertitle text from the first fifteen minutes of the 1920 film "The Cabinet of Dr. Caligari", and the lyrics to "Peanut Butter Jelly Time" by Buckwheat Boyz. In further iterations I tested CoPilot's ability to recognize text which it had created to change small portions of the poem into different languages or numbers creating something more random and freestyle.</p>
                 `;
-            } } 
-            popup.style.display = 'flex';
+                popup.style.display = 'flex';
+            }
+        }
 
 function hidePopup() {
             const popup = document.getElementById('popup');
