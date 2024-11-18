@@ -82,7 +82,8 @@
             font-weight: normal;
         }
 
-        .button-container {
+        
+    .button-container {
             display: flex;
             justify-content: center;
             gap: 1em;
@@ -146,7 +147,7 @@
             padding: 0.5em 1em;
             cursor: pointer;
         }
-    </style>
+</style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -175,12 +176,14 @@
         <div class="bold-header">Hello, this is my cool AI webpage!</div>
         <div class="sub-text">Here you can find a bunch of cool stuff that I did with Artificial Intelligence. Stay tuned for more updates!</div>
 
+
         <!-- Buttons Section -->
         <div class="button-container">
             <button class="button red" onclick="showPopup('Cubit 33')">Cubit 33</button>
             <button class="button blue" onclick="showPopup('Hypertext Distant Reading')">Hypertext Distant Reading</button>
             <button class="button green" onclick="showPopup('Cut-Up Texts')">Cut-Up Texts</button>
             <button class="button purple" onclick="showPopup('Zine')">Zine</button>
+        
         </div>
     </div>
 
@@ -191,15 +194,6 @@
         </div>
     </footer>
 
-    <!-- Popup HTML -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <button class="back-button" onclick="hidePopup()">Back</button>
-            <div id="popup-text"></div>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
     <script>
         // JavaScript for Slideshow
         let slideIndex = 0;
@@ -233,8 +227,18 @@
 
         changeBackground();
 
+        
+    </script>
+<div id="popup" class="popup">
+        <div class="popup-content">
+            <button class="back-button" onclick="hidePopup()">Back</button>
+            <div id="popup-text"></div>
+        </div>
+    </div>
+
+    <script>
         // JavaScript for Popup
-        function showPopup(buttonLabel)
+        function showPopup(buttonLabel) {
             const popup = document.getElementById('popup');
             const popupText = document.getElementById('popup-text');
             if (buttonLabel === 'Cubit 33') {
@@ -250,4 +254,14 @@
                 `;
             } else {
                 popupText.innerHTML = `<h2>${buttonLabel}</h2><p>Placeholder text for ${buttonLabel}. More content will be added here.</p>`;
-            }
+            popup.style.display = 'flex';
+        }
+        }
+
+        function hidePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
