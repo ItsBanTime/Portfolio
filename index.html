@@ -238,7 +238,7 @@
 
     <script>
         // JavaScript for Popup
-        function showPopup(buttonLabel) 
+        function showPopup(buttonLabel) {
             const popup = document.getElementById('popup');
             const popupText = document.getElementById('popup-text');
             if (buttonLabel === 'Cubit 33') {
@@ -255,6 +255,7 @@
             } else {
                 popupText.innerHTML = `<h2>${buttonLabel}</h2><p>Placeholder text for ${buttonLabel}. More content will be added here.</p>`;
             popup.style.display = 'flex';
+        }
         }
 
         function hidePopup() {
